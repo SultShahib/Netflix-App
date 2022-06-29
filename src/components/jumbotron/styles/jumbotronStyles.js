@@ -22,14 +22,6 @@ export const Inner = styled.section`
   }
 `;
 
-export const Container = styled.div`
-  width: 50%;
-
-  @media (max-width: 1000px) {
-    flex-direction: column;
-  }
-`;
-
 export const Title = styled.h1`
   font-size: 50px;
   line-height: 1.1;
@@ -41,7 +33,7 @@ export const Title = styled.h1`
 `;
 
 export const SubTitle = styled.h2`
-  font-size: 26px;
+  font-size: 20px;
   font-weight: normal;
   line-height: normal;
 
@@ -62,5 +54,17 @@ export const Pane = styled.div`
     width: 100px;
     padding: 0 45px;
     text-align: center;
+  }
+`;
+
+export const Container = styled.div`
+  width: 100%;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+
+    ${Item}:last-of-type h2 {
+      margin-bottom: 50px;
+    }
   }
 `;
