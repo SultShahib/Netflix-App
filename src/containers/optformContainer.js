@@ -8,7 +8,7 @@ export function OptFormContainer({ children, ...restProps }) {
         Ready to watch? Enter your email to create or restart your membership.
       </OptForm.Text>
       <OptForm.Break />
-      <OptForm.Input value="Email Address" />
+      <OptForm.Input />
       <OptForm.Button>Get Started</OptForm.Button>
     </OptForm>
   );

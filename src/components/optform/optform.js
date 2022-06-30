@@ -13,7 +13,7 @@ export default function OptForm({ children, ...restProps }) {
 }
 
 OptForm.Input = function OptFormInput({ children, ...restProps }) {
-  return <Input {...restProps}>{children}</Input>;
+  return <Input placeholder="Email Adress" />;
 };
 
 OptForm.Button = function OptFormButton({ children, ...restProps }) {
