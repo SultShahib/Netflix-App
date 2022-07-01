@@ -16,11 +16,12 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path={ROUTES.HOME} element={<HomePage />} />
-        <Route path={ROUTES.BROWSE} element={<Browse />} />
-        <Route path={ROUTES.SIGN_IN} element={<SignIn />} />
-        <Route path={ROUTES.SIGN_UP} element={<SignUp />} />
-        <Route path={ROUTES.SIGN_OUT} element={<SignOut />} />
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/browse" element={<Browse />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signout" element={<SignOut />} />
       </Routes>
     </Router>
   );
