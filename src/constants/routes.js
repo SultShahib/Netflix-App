@@ -1,5 +1,5 @@
-export const HOME = "/";
-export const BROWSE = "/browse";
-export const SIGN_UP = "/signup";
-export const SIGN_IN = "/signin";
-export const SIGN_OUT = "/signout";
+export const home = "/Netflix-Clone";
+export const browse = "/browse";
+export const signup = "/signup";
+export const signin = "/signin";
+export const signout = "/signout";
