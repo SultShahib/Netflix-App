@@ -21,7 +21,6 @@ export default function App() {
   const home4 = "/";
 
   const user = useAuthListener();
-  console.log(user);
 
   return (
     <Router>
@@ -35,15 +34,6 @@ export default function App() {
           <IsUserRedirect user={user} loggedInPath={ROUTES.browse} path={home3}>
           <HomePage />
         </IsUserRedirect> */}
-        <Route path={home3} exact>
-          <Redirect to={home2} />
-        </Route>
-        <Route path={home} exact>
-          <Redirect to={home2} />
-        </Route>
-        <IsUserRedirect user={user} loggedInPath={ROUTES.browse} path={home2}>
-          <HomePage />
-        </IsUserRedirect>
         <IsUserRedirect
           user={user}
           loggedInPath={ROUTES.browse}
@@ -61,7 +51,16 @@ export default function App() {
         <ProtectorRoute user={user} path={ROUTES.browse}>
           <Browse />
         </ProtectorRoute>
-        <Route path={home4} exact>
+        <IsUserRedirect user={user} loggedInPath={ROUTES.browse} path={home2}>
+          <HomePage />
+        </IsUserRedirect>
+        <Route path={home3}>
+          <Redirect to={home2} />
+        </Route>
+        <Route path={home}>
+          <Redirect to={home2} />
+        </Route>
+        <Route path={home4}>
           <Redirect to={home2} />
         </Route>
       </Switch>

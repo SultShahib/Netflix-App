@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import { Background, Container, Logo, ButtonLink } from "./styles/headerStyles";
 
-export default function Header({ bg = true, children, ...restProps }) {
-  return bg ? <Background {...restProps}>{children}</Background> : children;
+export default function Header({ bg = true, src, children, ...restProps }) {
+  return bg ? (
+    <Background src={src} {...restProps}>
+      {children}
+    </Background>
+  ) : (
+    children
+  );
 }
 
 Header.Frame = function HeaderFrame({ children, ...restProps }) {
@@ -12,7 +18,7 @@ Header.Frame = function HeaderFrame({ children, ...restProps }) {
 Header.Logo = function HeaderLogo({ to, ...restProps }) {
   return (
     <Link to={to}>
-      <Logo {...restProps} />;
+      <Logo {...restProps} />
     </Link>
   );
 };

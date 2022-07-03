@@ -26,7 +26,7 @@ export default function SignUp() {
         results.user
           .updateProfile({
             displayName: firstName,
-            photoUrl: Math.floor(Math.random() * 5) + 1,
+            photoURL: Math.floor(Math.random() * 5) + 1,
           })
           .then(() => {
             <Redirect to="/browse" />;
