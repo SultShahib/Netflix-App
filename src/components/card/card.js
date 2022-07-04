@@ -10,7 +10,14 @@ import {
   Image,
   Entities,
   Container,
+  Feature,
+  FeatureTitle,
+  FeatureText,
+  FeatureClose,
+  Content,
+  Maturity,
 } from "./styles/cardStyles";
+import Closelogo from "../../images/icons/close.png";
 
 export const FeatureContext = createContext();
 
@@ -51,6 +58,37 @@ Card.Entities = function CardEntities({ children, ...restProps }) {
   return <Entities {...restProps}>{children}</Entities>;
 };
 
+Card.Feature = function CardFeature({ children, category, ...restProps }) {
+  const { showFeature, itemFeature, setShowFeature } =
+    useContext(FeatureContext);
+
+  return showFeature ? (
+    <Feature
+      {...restProps}
+      src={require(`../../images/${category}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`)}
+    >
+      <Content>
+        <FeatureTitle>{itemFeature.title}</FeatureTitle>
+        <FeatureText>{itemFeature.description}</FeatureText>
+        <FeatureClose onClick={() => setShowFeature(false)}>
+          <img src={Closelogo} alt="Close" />
+        </FeatureClose>
+
+        <Group margin="30px 0" flexDirection="row" alignItems="center">
+          <Maturity rating={itemFeature.maturity}>
+            {itemFeature.maturity < 12 ? "PG" : itemFeature.maturity}
+          </Maturity>
+          <FeatureText fontWeight="bold">
+            {/* {itemFeature.genre.chartAt(0).toUpperCase() +
+              itemFeature.genre.slice(1)} */}
+          </FeatureText>
+        </Group>
+        {children}
+      </Content>
+    </Feature>
+  ) : null;
+};
+
 Card.Item = function CardItem({ item, children, ...restProps }) {
   const { setShowFeature, setItemFeature } = useContext(FeatureContext);
 
@@ -70,3 +108,30 @@ Card.Item = function CardItem({ item, children, ...restProps }) {
 Card.Image = function ({ ...restProps }) {
   return <Image {...restProps} />;
 };
+
+// return showFeature ? (
+//   <Feature
+//     {...restProps}
+//     src={`/images/${category}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`}
+//   >
+//     <Content>
+//       <FeatureTitle>{itemFeature.title}</FeatureTitle>
+//       <FeatureText>{itemFeature.description}</FeatureText>
+//       <FeatureClose onClick={() => setShowFeature(false)}>
+//         <img src="/images/icons/close.png" alt="Close" />
+//       </FeatureClose>
+
+//       <Group margin="30px 0" flexDirection="row" alignItems="center">
+//         <Maturity rating={itemFeature.maturity}>
+//           {itemFeature.maturity < 12 ? "PG" : itemFeature.maturity}
+//         </Maturity>
+//         <FeatureText fontWeight="bold">
+//           {itemFeature.genre.charAt(0).toUpperCase() +
+//             itemFeature.genre.slice(1)}
+//         </FeatureText>
+//       </Group>
+
+//       {children}
+//     </Content>
+//   </Feature>
+// ) : null;

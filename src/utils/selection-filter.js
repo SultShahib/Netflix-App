@@ -1,48 +1,44 @@
-export default function selectionFilter({ series, films }) {
+export default function selectionFilter({ series, films } = []) {
   return {
     series: [
       {
         title: "Documentaries",
-        series: series.filter((item) => item.genre === "documentaries"),
+        data: series?.filter((item) => item.genre === "documentaries"),
       },
       {
-        title: "Crime",
-        series: series.filter((item) => item.genre === "crime"),
-      },
-      {
-        title: "Feel Good",
-        series: series.filter((item) => item.genre === "feel-good"),
-      },
-      {
-        title: "Comedy",
-        series: series.filter((item) => item.genre === "comedies"),
-      },
-    ],
-
-    films: [
-      {
-        title: "Drama",
-        films: films.filter((item) => item.genre === "drama"),
-      },
-      {
-        title: "Thriller",
-        films: films.filter((item) => item.genre === "thriller"),
+        title: "Comedies",
+        data: series?.filter((item) => item.genre === "comedies"),
       },
       {
         title: "Children",
-        films: films.filter((item) => item.genre === "children"),
+        data: series?.filter((item) => item.genre === "children"),
+      },
+      {
+        title: "Crime",
+        data: series?.filter((item) => item.genre === "crime"),
+      },
+      {
+        title: "Feel Good",
+        data: series?.filter((item) => item.genre === "feel-good"),
+      },
+    ],
+    films: [
+      { title: "Drama", data: films?.filter((item) => item.genre === "drama") },
+      {
+        title: "Thriller",
+        data: films?.filter((item) => item.genre === "thriller"),
+      },
+      {
+        title: "Children",
+        data: films?.filter((item) => item.genre === "children"),
       },
       {
         title: "Suspense",
-        films: films.filter((item) => item.genre === "suspense"),
+        data: films?.filter((item) => item.genre === "suspense"),
       },
       {
         title: "Romance",
-        films: films.filter((item) => item.genre === "romance"),
-      },
-      {
-        title: "Suspense",
-        films: films.filter((item) => item.genre === "suspense"),
+        data: films?.filter((item) => item.genre === "romance"),
       },
     ],
   };
