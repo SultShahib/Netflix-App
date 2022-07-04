@@ -1,12 +1,19 @@
-# Getting Started with Create React App
+# Netflix Clone App Powered by React and Firebase
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Project Build Tools
 
-## Available Scripts
+1. React (Hooks: State-hook, Custom-hook, Context-hook, Effect-hook)
+2. React Router
+3. React Compount components and Styled components
+4. Firebase: Cloud-Firestore and Authentication
 
-In the project directory, you can run:
+### Features
+1. To begin, click the link to the website and you will be directed to the Home page
+2. Users can then click the Sign in button in the top right. A link to create an account is below the password
+3. Proceed by creating an account and then signing in
+4. Once signed in, you can view the browsing page for Films and Tv-Series 
+5. When finished, users can sign out by clicking their Avatars on top right corner and clicking sign-out
 
-### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
