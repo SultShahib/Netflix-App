@@ -1,12 +1,9 @@
 {
   "name": "netflix-app",
   "version": "0.1.0",
-  "homepage": "https://SultShahib.github.io/Netflix-Clone",
+  "homepage": "https://SultShahib.github.io/Netflix-App",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
     "firebase": "^9.8.4",
     "fuse.js": "^6.6.2",
     "normalize.css": "^8.0.1",
@@ -46,6 +43,9 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
-    "webpack": "^5.73.0"
+    "webpack": "^5.73.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0"
   }
 }

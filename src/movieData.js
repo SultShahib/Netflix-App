@@ -1,6 +1,5 @@
 export function seedDatabase(firebase) {
   function getUUID() {
-    // eslint gets funny about bitwise
     /* eslint-disable */
     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
       const piece = (Math.random() * 16) | 0;
@@ -9,10 +8,15 @@ export function seedDatabase(firebase) {
       return elem.toString(16);
     });
     /* eslint-enable */
+    // getUUID function outsourced from: https://www.w3resource.com/javascript-exercises/javascript-math-exercise-23.php
   }
 
   /* Series
     ============================================ */
+  // Series and documentaries to add to Firebase Cloud storage
+  // Movies in json format outsourced from: https://github.com/mikeleguedes/json-movie-list/tree/master/movies
+  // (Netflix removed their public api last year)
+
   // Documentaries
   firebase.firestore().collection("series").add({
     id: getUUID(),

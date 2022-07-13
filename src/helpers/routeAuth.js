@@ -11,7 +11,6 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest }) {
         }
 
         if (user) {
-          console.log(loggedInPath);
           return (
             <Redirect
               to={{

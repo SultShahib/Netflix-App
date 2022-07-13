@@ -9,6 +9,7 @@ import logo from "../images/icons/logo.svg";
 import Fuse from "fuse.js";
 import { FooterContainer } from "./footerContainer";
 import Player from "../components/player/player";
+import { useHistory } from "react-router-dom";
 
 export default function BrowseContainer({ children, slides, ...restProps }) {
   const [category, setCategory] = useState("series");
@@ -18,6 +19,7 @@ export default function BrowseContainer({ children, slides, ...restProps }) {
   const [slideRows, setSlideRows] = useState([]);
   const { firebase } = useContext(FirebaseContext);
   const user = firebase.auth().currentUser || {};
+  const history = useHistory();
 
   useEffect(() => {
     setTimeout(() => {
@@ -82,7 +84,20 @@ export default function BrowseContainer({ children, slides, ...restProps }) {
                   <Header.TextLink>{user.displayName}</Header.TextLink>
                 </Header.Group>
                 <Header.Group>
-                  <Header.TextLink onClick={() => firebase.auth().signOut()}>
+                  <Header.TextLink
+                    onClick={() =>
+                      firebase
+                        .auth()
+                        .signOut()
+                        .then(() => {
+                          history.replace("/");
+                          console.log("signout success");
+                        })
+                        .catch((err) => {
+                          console.log(err);
+                        })
+                    }
+                  >
                     Sign Out
                   </Header.TextLink>
                 </Header.Group>

@@ -1,7 +1,7 @@
 import Firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
-// import { seedDatabase } from "../movieData";
+import { seedDatabase } from "../movieData";
 
 const config = {
   apiKey: "AIzaSyDQTWdOgPSbHzuFj6QbwZKD2dUIjnw6akA",
@@ -13,9 +13,9 @@ const config = {
   measurementId: "G-KGSFHS7XX6",
 };
 
-const firebase = Firebase.initializeApp(config);
-console.log(firebase);
+export const firebase = Firebase.initializeApp(config);
 
-// seedDatabase(firebase);
+//seedDatabase(firebase)
 
-export { firebase };
+// ^^ Function from movieData.js to add list of films and movies to firestore (Cloud Database)
+// Do not uncomment, it is called only once to avoid duplication of data

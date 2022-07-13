@@ -12,9 +12,7 @@ export default function SignIn() {
   const [error, setError] = useState("");
 
   const { firebase } = useContext(FirebaseContext);
-  // Check for form element validity (Email and Password)
 
-  // const checkValidity = () => {};
   const isInvalid = password === "" || email === "";
 
   const handleSignIn = (e) => {
@@ -63,8 +61,8 @@ export default function SignIn() {
             New to Netflix? <Form.Link to="/signup">Sign up now.</Form.Link>
           </Form.Text>
           <Form.TextSmall>
-            This page is protected by Shahibs reCAPTCHA to ensure you're not a
-            bot, only hooman. Learn More.
+            This page is protected by Shahib's reCAPTCHA to ensure you're not a
+            bot, only human. Learn More.
           </Form.TextSmall>
         </Form>
       </HeaderContainer>

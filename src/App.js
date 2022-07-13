@@ -25,15 +25,6 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        {/* <IsUserRedirect user={user} loggedInPath={ROUTES.browse} path={home}>
-          <HomePage />
-        </IsUserRedirect> */}
-        {/* <IsUserRedirect user={user} loggedInPath={ROUTES.browse} path={home4}>
-          <HomePage />
-          </IsUserRedirect>
-          <IsUserRedirect user={user} loggedInPath={ROUTES.browse} path={home3}>
-          <HomePage />
-        </IsUserRedirect> */}
         <IsUserRedirect
           user={user}
           loggedInPath={ROUTES.browse}
