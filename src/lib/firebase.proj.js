@@ -1,7 +1,7 @@
 import Firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
-// import { seedDatabase } from "../movieData";
+import { seedDatabase } from "../movieData";
 
 const config = {
   apiKey: "AIzaSyDQTWdOgPSbHzuFj6QbwZKD2dUIjnw6akA",
@@ -17,5 +17,6 @@ const firebase = Firebase.initializeApp(config);
 console.log(firebase);
 
 // seedDatabase(firebase);
+// ^^ Do not uncomment. This is to store films and series data into firebase cloud firestore. Calling more than once will cause series and films duplication
 
 export { firebase };

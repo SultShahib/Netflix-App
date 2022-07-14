@@ -40,7 +40,7 @@ export const Title = styled.p`
 `;
 
 export const Text = styled.p`
-  font-size: 14.5px;
+  font-size: 17.5px;
   color: #757575;
   margin-bottom: 40px;
 `;

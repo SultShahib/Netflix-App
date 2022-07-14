@@ -9,6 +9,9 @@ import logo from "../images/icons/logo.svg";
 import Fuse from "fuse.js";
 import { FooterContainer } from "./footerContainer";
 import Player from "../components/player/player";
+import { useHistory } from "react-router-dom";
+
+// BrowserContainer component for rendering Browse-page contains - (SelectProfileContainer, Header, Footer, Films/Series and video player)
 
 export default function BrowseContainer({ children, slides, ...restProps }) {
   const [category, setCategory] = useState("series");
@@ -18,6 +21,7 @@ export default function BrowseContainer({ children, slides, ...restProps }) {
   const [slideRows, setSlideRows] = useState([]);
   const { firebase } = useContext(FirebaseContext);
   const user = firebase.auth().currentUser || {};
+  const history = useHistory();
 
   useEffect(() => {
     setTimeout(() => {
@@ -65,7 +69,6 @@ export default function BrowseContainer({ children, slides, ...restProps }) {
                 setSlideRows(slides["films"]);
               }}
             >
-              {console.log(category)}
               Films
             </Header.TextLink>
           </Header.Group>
@@ -82,7 +85,18 @@ export default function BrowseContainer({ children, slides, ...restProps }) {
                   <Header.TextLink>{user.displayName}</Header.TextLink>
                 </Header.Group>
                 <Header.Group>
-                  <Header.TextLink onClick={() => firebase.auth().signOut()}>
+                  <Header.TextLink
+                    onClick={() =>
+                      firebase
+                        .auth()
+                        .signOut()
+                        .then(() =>
+                          history.replace("/").catch((err) => {
+                            throw new Error("Error logging out");
+                          })
+                        )
+                    }
+                  >
                     Sign Out
                   </Header.TextLink>
                 </Header.Group>
@@ -91,10 +105,13 @@ export default function BrowseContainer({ children, slides, ...restProps }) {
           </Header.Group>
         </Header.Frame>
         <Header.Feature>
-          <Header.FeatureCallOut>Watch The Joker Now</Header.FeatureCallOut>
+          <Header.FeatureCallOut>
+            Watch The Adam Project Now
+          </Header.FeatureCallOut>
           <Header.Text>
-            Forever alone in a crowd, failed comedian Arthur Fleck seeks
-            connection as he walks the streets of Gotham City.
+            After accidentally crash-landing in 2022, time-traveling fighter
+            pilot Adam Reed teams up with his 12-year-old self for a mission to
+            save the future.
           </Header.Text>
           <Header.PlayButton>Play</Header.PlayButton>
         </Header.Feature>
@@ -102,6 +119,7 @@ export default function BrowseContainer({ children, slides, ...restProps }) {
 
       <Card.Group>
         {slideRows.map((slideItem) => {
+          console.log(slideItem);
           return (
             <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
               <Card.Title>{slideItem.title}</Card.Title>
@@ -123,9 +141,7 @@ export default function BrowseContainer({ children, slides, ...restProps }) {
               <Card.Feature category={category}>
                 <Player>
                   <Player.Button />
-                  <Player.Video
-                    src={require("../videos/romanEmpirePill.mp4")}
-                  />
+                  <Player.Video src={require("../videos/romanLore.mp4")} />
                 </Player>
               </Card.Feature>
             </Card>

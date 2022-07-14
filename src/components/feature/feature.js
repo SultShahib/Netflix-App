@@ -1,5 +1,6 @@
 import { Container, Title, SubTitle } from "./styles/featureStyles";
 
+// Components for home page title and subtitle
 export default function Feature({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }

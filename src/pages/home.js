@@ -1,7 +1,6 @@
 import { JumbotronContainer } from "../containers/jumbotronContainers";
 import { FooterContainer } from "../containers/footerContainer";
 import { FaqsContainer } from "../containers/faqs";
-import { OptFormContainer } from "../containers/optformContainer";
 import HeaderContainer from "../containers/headerContainer";
 import OptForm from "../components/optform/optform";
 import Feature from "../components/feature/feature";
@@ -15,18 +14,18 @@ export default function HomePage() {
           <Feature.SubTitle>
             Watch anywhere. Cancel at any time
           </Feature.SubTitle>
-          <OptFormContainer>
+          <OptForm>
             <OptForm.Input placeholder="Email Address" />
             <OptForm.Button>Get Started</OptForm.Button>
+            <OptForm.Break />
             <OptForm.Text>
               Ready to watch? Enter your email to create or restart your
               membership
             </OptForm.Text>
-          </OptFormContainer>
+          </OptForm>
         </Feature>
       </HeaderContainer>
       <JumbotronContainer />
-      <OptFormContainer />
       <FaqsContainer />
       <FooterContainer />
     </>

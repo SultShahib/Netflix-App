@@ -11,6 +11,8 @@ import {
 import UserImage from "../../images/users/2.png";
 import LoadingGif from "../../images/misc/loading.gif";
 
+// Component for rendering the profile. Displays user profile before directed to browsing page
+
 export default function Profiles({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }

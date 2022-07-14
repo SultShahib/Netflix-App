@@ -20,6 +20,8 @@ import {
 import userLogo from "../../images/users/2.png";
 import searchIconLogo from "../../images/icons/search.png";
 
+// Components to build Header in the Browse page (Different from Home page's header)
+
 export default function Header({ bg = true, src, children, ...restProps }) {
   return bg ? (
     <Background src={src} {...restProps}>

@@ -9,6 +9,8 @@ import {
   Item,
 } from "./styles/jumbotronStyles";
 
+// Component for jumbotron (Homepage section after header)
+
 export default function Jumbotron({
   children,
   direction = "row",

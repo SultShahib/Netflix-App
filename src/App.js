@@ -14,26 +14,20 @@ import * as ROUTES from "./constants/routes";
 import useAuthListener from "./hooks/use-auth-listener";
 
 export default function App() {
-  // const user = null;
   const home = "/home";
   const home2 = "/HOME";
   const home3 = "/Netflix-Clone";
   const home4 = "/";
+
+  // User is passed down to IsUserRedirect and ProtectorRoute to check if there is or isnt user
+  // IsUserRedirect: If there is a existing user, redirect to browse page. Otherwise return children (<SignIn /> and <SignUp /> page)
+  // ProtectorRoute: If there isn't any existing user, prevent from going to browse page and redirect to signIn page.
 
   const user = useAuthListener();
 
   return (
     <Router>
       <Switch>
-        {/* <IsUserRedirect user={user} loggedInPath={ROUTES.browse} path={home}>
-          <HomePage />
-        </IsUserRedirect> */}
-        {/* <IsUserRedirect user={user} loggedInPath={ROUTES.browse} path={home4}>
-          <HomePage />
-          </IsUserRedirect>
-          <IsUserRedirect user={user} loggedInPath={ROUTES.browse} path={home3}>
-          <HomePage />
-        </IsUserRedirect> */}
         <IsUserRedirect
           user={user}
           loggedInPath={ROUTES.browse}

@@ -8,6 +8,8 @@ import {
   Break,
 } from "./styles/optformStyles.js";
 
+// Component for Sign-Up input form in Home-Page
+
 export default function OptForm({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }

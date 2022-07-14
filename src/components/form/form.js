@@ -11,6 +11,8 @@ import {
   Base,
 } from "./styles/formStyles.js";
 
+// Components for the form section (signIn and signUp pages)
+
 export default function Form({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }

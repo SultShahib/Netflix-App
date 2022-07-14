@@ -9,6 +9,8 @@ import {
   Break,
 } from "./styles/footerStyles";
 
+// Components for the footer section (used in every page)
+
 export default function Footer({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }

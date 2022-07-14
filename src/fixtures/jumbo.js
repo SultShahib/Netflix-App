@@ -2,6 +2,8 @@ import hometv from "../images/misc/home-tv.jpg";
 import mobieTv from "../images/misc/home-mobile.jpg";
 import homeImac from "../images/misc/home-imac.jpg";
 
+// Jumbotron data
+
 export const jumboData = [
   {
     id: 1,
@@ -16,7 +18,6 @@ export const jumboData = [
     id: 2,
     title: "Download your programmes to watch on the go.",
     subTitle: "Save your data and watch all your favourites offline.",
-    // image: "/images/misc/home-mobile.jpg",
     image: mobieTv,
     alt: "Watch on mobile",
     direction: "row-reverse",
@@ -26,7 +27,6 @@ export const jumboData = [
     title: "Watch everywhere.",
     subTitle:
       "Stream unlimited films and TV programmes on your phone, tablet, laptop and TV without paying more.",
-    // image: "/images/misc/home-imac.jpg",
     image: homeImac,
     alt: "Money Heist on Netflix",
     direction: "row",

@@ -4,6 +4,8 @@ import * as ROUTES from "../constants/routes";
 import logo from "../images/icons/logo.svg";
 import Profiles from "../components/profiles/profiles";
 
+// Profile compound component, renders the profile component (user logo section before directed to browse page)
+
 export function SelectProfileContainer({ user, setProfile, loading }) {
   return (
     <>
