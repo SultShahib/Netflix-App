@@ -20,6 +20,7 @@ export default function SignUp() {
   const handleSignUp = (e) => {
     e.preventDefault();
 
+    // Firebase creates user with the email and password. Updates profile name with the first name and photourl(To provide user profile picture)
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)

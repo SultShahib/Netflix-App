@@ -119,7 +119,6 @@ export default function BrowseContainer({ children, slides, ...restProps }) {
 
       <Card.Group>
         {slideRows.map((slideItem) => {
-          console.log(slideItem);
           return (
             <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
               <Card.Title>{slideItem.title}</Card.Title>

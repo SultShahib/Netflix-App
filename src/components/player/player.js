@@ -11,7 +11,7 @@ import {
 export const PlayerContext = createContext();
 
 // Component for video player when clicking play in Browse-Page. Creates portal displaying video on screen
-// Standard video for all films and series (RickRoll troll)
+// Standard video for all films and series (Roman Edit)
 
 export default function Player({ children, ...restProps }) {
   const [showPlayer, setShowPlayer] = useState(false);

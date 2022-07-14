@@ -30,7 +30,7 @@ Profiles.User = function ProfilesUser({ children, ...restProps }) {
 };
 
 Profiles.Picture = function ProfilesPicture({ src, loading, ...restProps }) {
-  return <Picture {...restProps} src={src ? UserImage : LoadingGif} />;
+  return <Picture {...restProps} src={UserImage} />;
 };
 
 Profiles.Name = function ProfilesName({ children, loading, ...restProps }) {

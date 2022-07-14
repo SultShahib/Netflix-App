@@ -14,7 +14,6 @@ const config = {
 };
 
 const firebase = Firebase.initializeApp(config);
-console.log(firebase);
 
 // seedDatabase(firebase);
 // ^^ Do not uncomment. This is to store films and series data into firebase cloud firestore. Calling more than once will cause series and films duplication
