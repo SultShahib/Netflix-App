@@ -15,4 +15,6 @@
 - When finished, users can sign out by clicking their Avatars on top right corner and clicking sign-out
 
 ### Website Showcase
-![Homepage](pageImage/home.png?raw=true "Title")
+![Homepage](relative/pageImage/to/home.png?raw=true "Title")
+![Alt text](relative/path/to/img.jpg?raw=true "Title")
+
