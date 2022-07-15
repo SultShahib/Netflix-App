@@ -29,5 +29,3 @@
 - When finished, users can sign out by clicking their Avatars on top right corner and clicking sign-out
 
 ### Website Images
-
-![Alt text](pageImage/home.png?raw=true "Title")
