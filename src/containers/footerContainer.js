@@ -1,6 +1,8 @@
 import Footer from "../components/footer/footer";
 import React from "react";
 
+// Footer Compond Component for rendering the footer component (Used in home, browse, signIn, signUp)
+
 export const FooterContainer = () => {
   return (
     <Footer>
@@ -44,6 +46,7 @@ export const FooterContainer = () => {
       </Footer.Row>
       <Footer.Break />
       <Footer.Text>Netflix Malaysia</Footer.Text>
+      <Footer.Text>&copy; Created by Mohamed Shahib &copy;</Footer.Text>
     </Footer>
   );
 };

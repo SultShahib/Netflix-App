@@ -11,6 +11,7 @@ export default function SignIn() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  // Import firebase for email and password authentication
   const { firebase } = useContext(FirebaseContext);
 
   const isInvalid = password === "" || email === "";
@@ -22,7 +23,7 @@ export default function SignIn() {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        <Redirect to="/home" />;
+        <Redirect to="/browse" />;
       })
       .catch((err) => {
         setEmail("");
@@ -37,8 +38,6 @@ export default function SignIn() {
         <Form>
           <Form.Title>Sign In</Form.Title>
           {error && <Form.Error>{error}</Form.Error>}
-          {/* <Form.Error></Form.Error> */}
-
           <Form.Base onSubmit={handleSignIn} method="POST">
             <Form.Input
               placeholder="Email Adress"

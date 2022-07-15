@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Background, Container, Logo, ButtonLink } from "./styles/headerStyles";
 
+// Components for the header section in Home-Page, Sign-in, Sign-Up
 export default function Header({ bg = true, src, children, ...restProps }) {
   return bg ? (
     <Background src={src} {...restProps}>
@@ -26,7 +27,3 @@ Header.Logo = function HeaderLogo({ to, ...restProps }) {
 Header.ButtonLink = function HeaderButtonLinnk({ children, ...restProps }) {
   return <ButtonLink {...restProps}>{children}</ButtonLink>;
 };
-
-// Header.Background = function HeaderBackground({ children, ...restProps }) {
-//   return <Background {...restProps}>{children}</Background>;
-// };

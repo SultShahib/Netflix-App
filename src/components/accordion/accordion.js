@@ -14,6 +14,8 @@ import AddButton from "../../images/icons/add.png";
 
 const ToggleContext = createContext();
 
+// Accordion Components (Frequently asked questions sections)
+
 export default function Accordion({ children, ...restProps }) {
   return (
     <Container {...restProps}>

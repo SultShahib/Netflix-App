@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import { Link as ReachRouterLink } from "react-router-dom";
-import joker from "../../../images/misc/joker1.jpg";
+import adam from "../../../images/icons/adam.jpeg";
 
 export const Background = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const Background = styled.div`
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.35)
     ),
-    url(${joker}) top left / cover no-repeat;
+    url(${adam}) top left / cover no-repeat;
 
   @media (max-width: 1100px) {
     ${({ dontShowOnSmallViewPort }) =>

@@ -16,6 +16,5 @@ const config = {
 export const firebase = Firebase.initializeApp(config);
 
 //seedDatabase(firebase)
-
 // ^^ Function from movieData.js to add list of films and movies to firestore (Cloud Database)
 // Do not uncomment, it is called only once to avoid duplication of data

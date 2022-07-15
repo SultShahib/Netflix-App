@@ -2,6 +2,8 @@ import React from "react";
 import Jumbotron from "../components/jumbotron/jumbotron";
 import { jumboData } from "../fixtures/jumbo";
 
+// Jumbotron Compound component, rendering the jumbotron container "Enjoy on your tv (tiger king image)"
+
 export function JumbotronContainer() {
   return (
     <Jumbotron.Container>

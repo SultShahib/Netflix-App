@@ -21,6 +21,10 @@ import Closelogo from "../../images/icons/close.png";
 
 export const FeatureContext = createContext();
 
+// Components to build the individual films and series section
+// Includes the small movie/series image and hover
+// Includes the enlarged movie/series image with descriptions
+
 export default function Card({ children, ...restProps }) {
   const [showFeature, setShowFeature] = useState(false);
   const [itemFeature, setItemFeature] = useState({});
@@ -79,8 +83,8 @@ Card.Feature = function CardFeature({ children, category, ...restProps }) {
             {itemFeature.maturity < 12 ? "PG" : itemFeature.maturity}
           </Maturity>
           <FeatureText fontWeight="bold">
-            {/* {itemFeature.genre.chartAt(0).toUpperCase() +
-              itemFeature.genre.slice(1)} */}
+            {itemFeature.genre.charAt(0).toUpperCase() +
+              itemFeature.genre.slice(1)}
           </FeatureText>
         </Group>
         {children}
@@ -108,30 +112,3 @@ Card.Item = function CardItem({ item, children, ...restProps }) {
 Card.Image = function ({ ...restProps }) {
   return <Image {...restProps} />;
 };
-
-// return showFeature ? (
-//   <Feature
-//     {...restProps}
-//     src={`/images/${category}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`}
-//   >
-//     <Content>
-//       <FeatureTitle>{itemFeature.title}</FeatureTitle>
-//       <FeatureText>{itemFeature.description}</FeatureText>
-//       <FeatureClose onClick={() => setShowFeature(false)}>
-//         <img src="/images/icons/close.png" alt="Close" />
-//       </FeatureClose>
-
-//       <Group margin="30px 0" flexDirection="row" alignItems="center">
-//         <Maturity rating={itemFeature.maturity}>
-//           {itemFeature.maturity < 12 ? "PG" : itemFeature.maturity}
-//         </Maturity>
-//         <FeatureText fontWeight="bold">
-//           {itemFeature.genre.charAt(0).toUpperCase() +
-//             itemFeature.genre.slice(1)}
-//         </FeatureText>
-//       </Group>
-
-//       {children}
-//     </Content>
-//   </Feature>
-// ) : null;

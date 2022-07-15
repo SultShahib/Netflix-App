@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import Header from "../components/header/header";
 import * as ROUTES from "../constants/routes";
 import logo from "../images/icons/logo.svg";
 import Profiles from "../components/profiles/profiles";
+
+// Profile compound component, renders the profile component (user logo section before directed to browse page)
 
 export function SelectProfileContainer({ user, setProfile, loading }) {
   return (
@@ -24,7 +26,7 @@ export function SelectProfileContainer({ user, setProfile, loading }) {
               })
             }
           >
-            <Profiles.Picture src={3} />
+            <Profiles.Picture src={user.photoURL} />
             <Profiles.Name>{user.displayName}</Profiles.Name>
           </Profiles.User>
         </Profiles.List>

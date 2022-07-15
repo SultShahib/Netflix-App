@@ -4,7 +4,7 @@ import { FooterContainer } from "../containers/footerContainer";
 import HeaderContainer from "../containers/headerContainer";
 import { FirebaseContext } from "../context/firebase";
 import { useContext } from "react";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function SignUp() {
   const { firebase } = useContext(FirebaseContext);
@@ -13,12 +13,14 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const history = useHistory();
 
   const isInvalid = email === "" || password === "" || firstName === "";
 
   const handleSignUp = (e) => {
     e.preventDefault();
 
+    // Firebase creates user with the email and password. Updates profile name with the first name and photourl(To provide user profile picture)
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -29,7 +31,7 @@ export default function SignUp() {
             photoURL: Math.floor(Math.random() * 5) + 1,
           })
           .then(() => {
-            <Redirect to="/browse" />;
+            history.push("/browse");
           })
           .catch((err) => {
             setFirstName("");
