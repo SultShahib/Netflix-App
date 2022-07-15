@@ -29,3 +29,23 @@
 - When finished, users can sign out by clicking their Avatars on top right corner and clicking sign-out
 
 ### Website Images
+
+## Home page
+
+![Preview](home.png?raw=true)
+
+## Sign-In page
+
+![Preview](signIn.png?raw=true)
+
+## Sign-Up page
+
+![Preview](signUp.png?raw=true)
+
+## Browse(Series) page
+
+![Preview](series.png?raw=true)
+
+## Browse(Films) page
+
+![Preview](films.png?raw=true)
