@@ -14,4 +14,5 @@
 - Once signed in, you can view the browsing page for Films and Tv-Series 
 - When finished, users can sign out by clicking their Avatars on top right corner and clicking sign-out
 
-
+### Website Showcase
+![Homepage](pageImage/home.png?raw=true "Title")
