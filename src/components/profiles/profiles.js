@@ -9,7 +9,6 @@ import {
 } from "./styles/profileStyles";
 
 import UserImage from "../../images/users/2.png";
-import LoadingGif from "../../images/misc/loading.gif";
 
 // Component for rendering the profile. Displays user profile before directed to browsing page
 
