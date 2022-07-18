@@ -1,4 +1,4 @@
-# Netflix -React- App
+# Netflix - React - App
 
 ### Project Build Tools
 
