@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Header from "../components/header/header";
 import * as ROUTES from "../constants/routes";
 import logo from "../images/icons/logo.svg";

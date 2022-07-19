@@ -44,7 +44,7 @@ export default function BrowseContainer({ children, slides, ...restProps }) {
     } else {
       setSlideRows(slides[category]);
     }
-  }, [searchTerm]);
+  }, [searchTerm, category, slides, slideRows]);
 
   return profile.displayName ? (
     <>
